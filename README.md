@@ -1,20 +1,64 @@
 # SistemaWSJCommerce
 
 # Sobre o Sistema:
-O sistema deve manter um cadastro de usuário, produtos e suas categorias. Cada usuário possui nome, email, telefone, 
-data de nascimento e uma senha de acesso. Os dados dos produtos são: nome, descrição, preço e imagem.
-O sistema deve apresentar um catálogo de produtos, os quais podem ser filtrados pelo nome do produto. A partir desse catálogo,
-o usuário pode selecionar um produto para ver seus detalhes e para decidir se o adiciona a um carrinho de compras. 
-O usuário pode incluir e remover itens do carrinho de compra, bem como alterar as quantidades de cada item.
-Uma vez que o usuário decida encerrar o pedido, o pedido deve então ser salvo no sistema com o status de "aguardando pagamento".
-Os dados de um pedido são: instante em que ele foi salvo, status, e uma lista de itens, onde cada item se refere a um produto e sua quantidade no pedido. 
-O status de um pedido pode ser: aguardando pagamento, pago, enviado, entregue e cancelado.
-Quando o usuário paga por um pedido, o instante do pagamento deve ser registrado. 
-Os usuários do sistema podem ser clientes ou administradores, sendo que todo usuário cadastrado por padrão é cliente.
-Usuários não identificados podem se cadastrar no sistema, navegar no catálogo de produtos e no carrinho de compras. 
-Clientes podem atualizar seu cadastro no sistema, registrar pedidos e visualizar seus próprios pedidos.
-Usuários administradores tem acesso à área administrativa onde pode acessar os cadastros de usuários, produtos e categorias.
-Link:Protótipos de tela: https://www.figma.com/file/gJvohZcKvEDxqVGz2OvPQx/WSJCommerce?t=YYh32zg17TZRlVrq-6
+API REST
+Conceitos importantes
+
+- API - Application Programming Interface: é o conjunto de
+funcionalidades que são expostas por uma aplicação/módulo.
+Outra aplicação/módulo pode acessar essa API.
+- É um contrato entre um provedor e um consumidor de
+funcionalidades.
+
+- API Web: é uma API que está disponibilizada via web. As
+funcionalidades são acessadas por meio de endpoints web (host,
+porta, rota, parâmetros, corpo (payload), cabeçalhos) usando
+protocolo HTTP.
+
+- API REST: é uma API Web que está em conformidade com as
+restrições do padrão REST.
+
+![Web 0](https://github.com/williamsartijose/03-APIREST-CamadasCRUDExcecoes-Validacoes/blob/main/Imagem/1.png)
+
+
+
+# Padrão REST
+
+- Cliente/servidor com HTTP
+- Comunicação stateless
+- Cache
+- Interface uniforme, formato padronizado
+- Sistema em camadas
+- Código sob demanda (opcional)
+- DOCUMENTAÇÂO: https://www.redhat.com/pt-br/topics/api/what-is-a-rest-api
+
+![Web 2](https://github.com/williamsartijose/03-APIREST-CamadasCRUDExcecoes-Validacoes/blob/main/Imagem/2.png)
+
+# Verbos (métodos) HTTP mais utilizados
+
+- GET - obter recurso
+- POST - criar novo recurso
+- PUT - salvar recurso de forma idempotente
+- DELETE - deletar recurso
+- Operação idempotente = não causa novos efeitos se executada mais de uma vez
+- DOCUMENTAÇÂO: https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Methods
+
+# Padrão camadas Organizando a aplicação em camadas com responsabilidades definidas
+
+- Consiste em organizar os componentes do sistema em partes denominadas camadas
+- Cada camada possui uma responsabilidade específica
+- componentes da mesma camada, ou da camada mais abaixo
+
+![Web 3](https://github.com/williamsartijose/03-APIREST-CamadasCRUDExcecoes-Validacoes/blob/main/Imagem/3.png) 
+
+![Web 4](https://github.com/williamsartijose/03-APIREST-CamadasCRUDExcecoes-Validacoes/blob/main/Imagem/4.png) 
+
+# Como copiar dados da entity para o DTO?
+
+- Cópia manual (set / construtor)
+- Usar alguma lib que copia atributos de mesmo nome de um objeto
+para outro, por exemplo: ModelMapper
+https://www.baeldung.com/entity-to-and-from-dto-for-a-java-spring-application
 
 # Tecnologias utilizadas
 ## Back end
